@@ -1,0 +1,9 @@
+{% if data %}
+    <ul>
+    {% for personage in data %}
+        <li>{{ personage.name_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No sensors data available.</p>
+{% endif %}
