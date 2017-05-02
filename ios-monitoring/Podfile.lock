@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.4.0)
+  - JustPeek (0.3.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - JustPeek
+  - SDWebImage (~> 3.8)
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  JustPeek: a9f9e49f73bfbe8fa279afbdd32a52aad41779a5
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+
+PODFILE CHECKSUM: d18ffe5a9e1f71f3ca6a04217d57a2f87022aab7
+
+COCOAPODS: 1.0.0.rc.1
