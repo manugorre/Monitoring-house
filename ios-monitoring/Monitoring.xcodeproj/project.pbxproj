@@ -18,6 +18,8 @@
 		3200FFF11EB66CC70047459F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3200FFEF1EB66CC70047459F /* LaunchScreen.storyboard */; };
 		3200FFFB1EB6B85D0047459F /* SoundBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200FFFA1EB6B85C0047459F /* SoundBoxController.swift */; };
 		3200FFFE1EB6BA7D0047459F /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200FFFD1EB6BA7D0047459F /* Sound.swift */; };
+		32C8129D1EB94DA6004624E9 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C8129B1EB94DA6004624E9 /* UIApplicationExtension.swift */; };
+		32C8129E1EB94DA6004624E9 /* UIColorExtenxion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C8129C1EB94DA6004624E9 /* UIColorExtenxion.swift */; };
 		32D1ECCC1EB92F0800BAE631 /* SoundDetailsPeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1ECCB1EB92F0800BAE631 /* SoundDetailsPeekViewController.swift */; };
 		32D363631EB6DCBE00FF33F7 /* SonosWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D363621EB6DCBE00FF33F7 /* SonosWS.swift */; };
 		32EF1AA51EB75F3200BCE917 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EF1AA41EB75F3200BCE917 /* Author.swift */; };
@@ -39,6 +41,8 @@
 		3200FFFA1EB6B85C0047459F /* SoundBoxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundBoxController.swift; path = GUI/SoundBox/SoundBoxController.swift; sourceTree = "<group>"; };
 		3200FFFD1EB6BA7D0047459F /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		3200FFFF1EB6BA850047459F /* Sonos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sonos.swift; sourceTree = "<group>"; };
+		32C8129B1EB94DA6004624E9 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIApplicationExtension.swift; path = Utils/UIApplicationExtension.swift; sourceTree = "<group>"; };
+		32C8129C1EB94DA6004624E9 /* UIColorExtenxion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtenxion.swift; path = Utils/UIColorExtenxion.swift; sourceTree = "<group>"; };
 		32D1ECCB1EB92F0800BAE631 /* SoundDetailsPeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundDetailsPeekViewController.swift; sourceTree = "<group>"; };
 		32D363621EB6DCBE00FF33F7 /* SonosWS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonosWS.swift; sourceTree = "<group>"; };
 		32EF1AA41EB75F3200BCE917 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
@@ -68,16 +72,12 @@
 				32EF1AA61EB761F600BCE917 /* SoundBoxWS.swift */,
 			);
 			name = Webservices;
-			path = Monitoring;
 			sourceTree = "<group>";
 		};
 		3200FFDA1EB66CC70047459F = {
 			isa = PBXGroup;
 			children = (
 				3200FFE51EB66CC70047459F /* Monitoring */,
-				3200FFF81EB6B8090047459F /* GUI */,
-				3200FFFC1EB6BA700047459F /* Models */,
-				320000071EB6D76F0047459F /* Webservices */,
 				3200FFE41EB66CC70047459F /* Products */,
 				8EAE22111BF575A53239EFD2 /* Pods */,
 				B523E2FDFDD635B2EC9694A2 /* Frameworks */,
@@ -101,6 +101,10 @@
 				3200FFED1EB66CC70047459F /* Assets.xcassets */,
 				3200FFEF1EB66CC70047459F /* LaunchScreen.storyboard */,
 				3200FFF21EB66CC70047459F /* Info.plist */,
+				3200FFF81EB6B8090047459F /* GUI */,
+				3200FFFC1EB6BA700047459F /* Models */,
+				320000071EB6D76F0047459F /* Webservices */,
+				3252FDF71EB94B72008A661A /* Utils */,
 			);
 			path = Monitoring;
 			sourceTree = "<group>";
@@ -111,7 +115,6 @@
 				3200FFF91EB6B8100047459F /* Sound Box */,
 			);
 			name = GUI;
-			path = Monitoring;
 			sourceTree = "<group>";
 		};
 		3200FFF91EB6B8100047459F /* Sound Box */ = {
@@ -133,7 +136,15 @@
 				32EF1AA41EB75F3200BCE917 /* Author.swift */,
 			);
 			name = Models;
-			path = Monitoring;
+			sourceTree = "<group>";
+		};
+		3252FDF71EB94B72008A661A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				32C8129B1EB94DA6004624E9 /* UIApplicationExtension.swift */,
+				32C8129C1EB94DA6004624E9 /* UIColorExtenxion.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		8EAE22111BF575A53239EFD2 /* Pods */ = {
@@ -252,7 +263,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which taylor >/dev/null; then\n    taylor -p ${PROJECT_DIR}/Monitoring -r xcode\n    taylor -p ${PROJECT_DIR}/GUI -r xcode\n    taylor -p ${PROJECT_DIR}/Models -r xcode\n    taylor -p ${PROJECT_DIR}/WebServices -r xcode\nelse\n    echo \"Taylor not installed\"\nfi";
+			shellScript = "if which taylor >/dev/null; then\n    taylor -p ${PROJECT_DIR}/Monitoring -r xcode\nelse\n    echo \"Taylor not installed\"\nfi";
 		};
 		4F1E03AD6C05D42FE10FDDFD /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -300,6 +311,8 @@
 				3200FFE91EB66CC70047459F /* ViewController.swift in Sources */,
 				3200FFE71EB66CC70047459F /* AppDelegate.swift in Sources */,
 				320000021EB6BBB60047459F /* SonosCollectionViewCell.swift in Sources */,
+				32C8129D1EB94DA6004624E9 /* UIApplicationExtension.swift in Sources */,
+				32C8129E1EB94DA6004624E9 /* UIColorExtenxion.swift in Sources */,
 				3200FFFE1EB6BA7D0047459F /* Sound.swift in Sources */,
 				32D1ECCC1EB92F0800BAE631 /* SoundDetailsPeekViewController.swift in Sources */,
 				320000001EB6BA850047459F /* Sonos.swift in Sources */,

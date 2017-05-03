@@ -35,6 +35,11 @@ class SoundBoxController: UIViewController, UICollectionViewDelegate, UICollecti
         peekController = PeekController()
         peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
         
+        navigationController?.navigationBar.barTintColor = UIColor.applicationBlueColor()
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.applicationBlueDarkColor()
+        
         checkTraitCollection()
         getSonosWS()
         getSoundBoxWS()

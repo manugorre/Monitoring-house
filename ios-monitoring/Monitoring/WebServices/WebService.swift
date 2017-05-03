@@ -26,7 +26,6 @@ class Webservice: NSObject {
     }
     
     static func URLStringForPath(path: String) -> String {
-        print(baseURL + path)
         return baseURL + path
     }
     
