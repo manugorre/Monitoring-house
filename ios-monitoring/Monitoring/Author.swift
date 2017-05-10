@@ -15,13 +15,13 @@ class Author: NSObject {
     
     override init() {}
     
-    init(JSON: [String: AnyObject]) {
+    init(jsonData: [String: AnyObject]) {
         
-        if let id = JSON["id"] as? Int {
+        if let id = jsonData["id"] as? Int {
             self.id = id
         }
         
-        if let name = JSON["name_text"] as? String {
+        if let name = jsonData["name_text"] as? String {
             self.name = name
         }
     }

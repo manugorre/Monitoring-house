@@ -16,17 +16,17 @@ class Sound: NSObject {
     
     override init() {}
     
-    init(JSON: [String: AnyObject]) {
+    init(jsonData: [String: AnyObject]) {
     
-        if let id = JSON["id"] as? Int {
+        if let id = jsonData["id"] as? Int {
             self.id = id
         }
         
-        if let authorId = JSON["author_id"] as? Int {
+        if let authorId = jsonData["author_id"] as? Int {
             self.authorId = authorId
         }
         
-        if let title = JSON["title_text"] as? String {
+        if let title = jsonData["title_text"] as? String {
             self.title = title
         }
     }

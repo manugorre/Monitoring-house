@@ -20,6 +20,7 @@
 		3200FFFE1EB6BA7D0047459F /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200FFFD1EB6BA7D0047459F /* Sound.swift */; };
 		32C8129D1EB94DA6004624E9 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C8129B1EB94DA6004624E9 /* UIApplicationExtension.swift */; };
 		32C8129E1EB94DA6004624E9 /* UIColorExtenxion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C8129C1EB94DA6004624E9 /* UIColorExtenxion.swift */; };
+		32C812A01EBA5D19004624E9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C8129F1EBA5D19004624E9 /* Utils.swift */; };
 		32D1ECCC1EB92F0800BAE631 /* SoundDetailsPeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1ECCB1EB92F0800BAE631 /* SoundDetailsPeekViewController.swift */; };
 		32D363631EB6DCBE00FF33F7 /* SonosWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D363621EB6DCBE00FF33F7 /* SonosWS.swift */; };
 		32EF1AA51EB75F3200BCE917 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EF1AA41EB75F3200BCE917 /* Author.swift */; };
@@ -43,6 +44,7 @@
 		3200FFFF1EB6BA850047459F /* Sonos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sonos.swift; sourceTree = "<group>"; };
 		32C8129B1EB94DA6004624E9 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIApplicationExtension.swift; path = Utils/UIApplicationExtension.swift; sourceTree = "<group>"; };
 		32C8129C1EB94DA6004624E9 /* UIColorExtenxion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtenxion.swift; path = Utils/UIColorExtenxion.swift; sourceTree = "<group>"; };
+		32C8129F1EBA5D19004624E9 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		32D1ECCB1EB92F0800BAE631 /* SoundDetailsPeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundDetailsPeekViewController.swift; sourceTree = "<group>"; };
 		32D363621EB6DCBE00FF33F7 /* SonosWS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonosWS.swift; sourceTree = "<group>"; };
 		32EF1AA41EB75F3200BCE917 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				32C8129B1EB94DA6004624E9 /* UIApplicationExtension.swift */,
 				32C8129C1EB94DA6004624E9 /* UIColorExtenxion.swift */,
+				32C8129F1EBA5D19004624E9 /* Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				32D363631EB6DCBE00FF33F7 /* SonosWS.swift in Sources */,
 				32EF1AA71EB761F600BCE917 /* SoundBoxWS.swift in Sources */,
 				320000091EB6D7970047459F /* WebService.swift in Sources */,
+				32C812A01EBA5D19004624E9 /* Utils.swift in Sources */,
 				32EF1AA51EB75F3200BCE917 /* Author.swift in Sources */,
 				3200FFE91EB66CC70047459F /* ViewController.swift in Sources */,
 				3200FFE71EB66CC70047459F /* AppDelegate.swift in Sources */,
@@ -440,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA3DAEC9283C6C2E9C944B1E /* Pods-Monitoring.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 335SM56X66;
 				INFOPLIST_FILE = Monitoring/Info.plist;
@@ -454,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90F075ADCD876268F89010D4 /* Pods-Monitoring.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 335SM56X66;
 				INFOPLIST_FILE = Monitoring/Info.plist;

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -189,10 +190,14 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="znm-0G-KeJ">
+                                        <rect key="frame" x="189" y="52" width="37" height="37"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="p50-95-nv4" firstAttribute="centerX" secondItem="nc5-NU-bwS" secondAttribute="centerX" id="3cI-dL-FRs"/>
                                     <constraint firstAttribute="trailing" secondItem="gaz-c6-hdL" secondAttribute="trailing" constant="5" id="578-cp-f7X"/>
+                                    <constraint firstItem="znm-0G-KeJ" firstAttribute="centerY" secondItem="nc5-NU-bwS" secondAttribute="centerY" id="9jF-1W-Cr3"/>
                                     <constraint firstAttribute="trailing" secondItem="js8-lQ-xwr" secondAttribute="trailing" id="DmZ-qs-XUP"/>
                                     <constraint firstAttribute="height" constant="140" id="MC3-Tc-Dkm"/>
                                     <constraint firstItem="js8-lQ-xwr" firstAttribute="top" secondItem="nc5-NU-bwS" secondAttribute="top" id="NLy-KO-rlj"/>
@@ -203,6 +208,7 @@
                                     <constraint firstItem="gaz-c6-hdL" firstAttribute="leading" secondItem="nc5-NU-bwS" secondAttribute="leading" constant="5" id="ViW-Jg-q57"/>
                                     <constraint firstItem="js8-lQ-xwr" firstAttribute="leading" secondItem="nc5-NU-bwS" secondAttribute="leading" id="a9p-cY-BPz"/>
                                     <constraint firstItem="d3o-1x-vJD" firstAttribute="leading" secondItem="nc5-NU-bwS" secondAttribute="leading" constant="10" id="eAd-Xx-9JG"/>
+                                    <constraint firstItem="znm-0G-KeJ" firstAttribute="centerX" secondItem="nc5-NU-bwS" secondAttribute="centerX" id="i3e-bY-hyT"/>
                                     <constraint firstAttribute="bottom" secondItem="js8-lQ-xwr" secondAttribute="bottom" id="oSz-ca-aOU"/>
                                     <constraint firstItem="d3o-1x-vJD" firstAttribute="top" secondItem="nc5-NU-bwS" secondAttribute="top" constant="5" id="plt-f9-fIO"/>
                                     <constraint firstItem="p50-95-nv4" firstAttribute="centerY" secondItem="nc5-NU-bwS" secondAttribute="centerY" id="xCX-QP-TCU"/>
@@ -333,6 +339,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sound Box" id="Nt4-Me-DPr"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="znm-0G-KeJ" id="Kg1-tZ-NPk"/>
                         <outlet property="collectionView" destination="gaz-c6-hdL" id="c1g-7q-Lfy"/>
                         <outlet property="noSpeakerAvailableLabel" destination="p50-95-nv4" id="4sa-tJ-YWY"/>
                         <outlet property="noSpeakerSelectedLabel" destination="boJ-aQ-yc8" id="djA-5M-Slh"/>
@@ -352,16 +359,54 @@
                         <viewControllerLayoutGuide type="bottom" id="NdO-mZ-jRx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ofU-Br-NO4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4y-zi-9tO">
+                                <rect key="frame" x="0.0" y="125" width="414" height="486"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chirac" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frX-JU-ZgI">
+                                        <rect key="frame" x="16" y="69" width="42" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Manger des pommes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Q-PO-kwZ">
+                                        <rect key="frame" x="16" y="24" width="235" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="C8Q-PO-kwZ" firstAttribute="top" secondItem="T4y-zi-9tO" secondAttribute="top" constant="24" id="RVG-e3-XB1"/>
+                                    <constraint firstItem="frX-JU-ZgI" firstAttribute="top" secondItem="C8Q-PO-kwZ" secondAttribute="bottom" constant="16" id="Zqc-bX-sc2"/>
+                                    <constraint firstItem="frX-JU-ZgI" firstAttribute="leading" secondItem="T4y-zi-9tO" secondAttribute="leading" constant="16" id="hHZ-4Z-R8N"/>
+                                    <constraint firstAttribute="height" constant="486" id="wQ0-Ck-hDc"/>
+                                    <constraint firstItem="C8Q-PO-kwZ" firstAttribute="leading" secondItem="T4y-zi-9tO" secondAttribute="leading" constant="16" id="xzy-gJ-d2o"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="T4y-zi-9tO" firstAttribute="centerX" secondItem="ofU-Br-NO4" secondAttribute="centerX" id="07z-yS-3Dy"/>
+                            <constraint firstItem="T4y-zi-9tO" firstAttribute="leading" secondItem="ofU-Br-NO4" secondAttribute="leadingMargin" constant="-20" id="WLY-Sy-LWe"/>
+                            <constraint firstItem="T4y-zi-9tO" firstAttribute="centerY" secondItem="ofU-Br-NO4" secondAttribute="centerY" id="pAV-sV-SvN"/>
+                        </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="200"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="frX-JU-ZgI" id="vzE-jx-XNk"/>
+                        <outlet property="titleLabel" destination="C8Q-PO-kwZ" id="klF-SR-UBe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZwL-jW-clg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2991" y="-55"/>
+            <point key="canvasLocation" x="2957.971014492754" y="-55.434782608695656"/>
         </scene>
         <!--SoundBox-->
         <scene sceneID="rhe-X3-Zx5">

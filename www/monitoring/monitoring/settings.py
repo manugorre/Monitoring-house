@@ -26,11 +26,13 @@ SECRET_KEY = 'qj46knctyvh7duk$63^=g8&1j1_4+^)4+b6bmpme%=1rw4f^3q'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'monitoring.house',
-    '192.168.0.22',
     'raspberry.local',
+    'monitoring.house',
     '127.0.0.1',
-    '10.20.0.127'
+    '192.168.2.1',
+    '172.16.2.41',
+    '10.20.0.127',
+    '192.168.0.22'
 ]
 
 # Application definition
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_crontab',
     'sonos.apps.SonosConfig',
+    #'soundBox.apps.SoundboxConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

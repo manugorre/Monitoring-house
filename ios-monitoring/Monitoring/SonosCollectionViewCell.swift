@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Alamofire
 
 class SonosCollectionViewCell: UICollectionViewCell {
     
@@ -28,8 +29,6 @@ class SonosCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            
-            
             UIView.animate(withDuration: 0.2) {
                 self.vibrancyEffect.backgroundColor = self.isSelected ? UIColor.white : nil
                 self.viewOverBlur.alpha = self.isSelected ? 1 : 0.5
@@ -58,7 +57,7 @@ class SonosCollectionViewCell: UICollectionViewCell {
     
     func updateSonosImage() {
         if let playerIconURL = sonos?.playerIconURL {
-            playerIconImageView.sd_setImage(with: playerIconURL, placeholderImage: UIImage(named: "placeholder.png"))
+            playerIconImageView.sd_setImage(with: playerIconURL, placeholderImage: UIImage(named: "ic_speaker"))
         }
     }
 }

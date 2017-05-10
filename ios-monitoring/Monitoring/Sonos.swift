@@ -19,29 +19,25 @@ class Sonos: NSObject {
     
     override init() {}
     
-    init(JSON: [String: AnyObject]) {
+    init(jsonData: [String: AnyObject]) {
         
-        if let id = JSON["id"] as? Int {
+        if let id = jsonData["id"] as? Int {
             self.id = id
         }
         
-        if let playerName = JSON["player_name"] as? String {
+        if let playerName = jsonData["player_name"] as? String {
             self.playerName = playerName
         }
         
-        if let isSelected = JSON["is_selected"] as? Int {
-            //self.isSelected = isSelected
-        }
-        
-        if let ipAddress = JSON["ip_address"] as? String {
+        if let ipAddress = jsonData["ip_address"] as? String {
             self.ipAddress = ipAddress
         }
         
-        if let modelName = JSON["model_name"] as? String {
+        if let modelName = jsonData["model_name"] as? String {
             self.modelName = modelName
         }
         
-        if let playerIconPath = JSON["player_icon_url"] as? String {
+        if let playerIconPath = jsonData["player_icon_url"] as? String {
             let playerIconURL = "http://\(self.ipAddress!):1400\(playerIconPath)"
             self.playerIconURL = URL(string: playerIconURL)
         }

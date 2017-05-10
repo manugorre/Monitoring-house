@@ -10,17 +10,20 @@ import UIKit
 
 class SoundDetailsPeekViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     
-    
-    var author: Author? {
-        didSet {
-            print(author?.name)
-        }
-    }
+
     
     var sound: Sound? {
         didSet {
-            print(sound?.title)
+            
+        }
+    }
+    
+    var author: Author? {
+        didSet {
+            
         }
     }
     
@@ -30,5 +33,24 @@ class SoundDetailsPeekViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        updateTitle()
+        updateName()
+    }
+    
+    
+    
+    // MARK: Update
+    
+    func updateTitle() {
+        if let title = sound?.title {
+            titleLabel.text = title
+        }
+    }
+    
+    func updateName() {
+        if let name = author?.name {
+            authorLabel.text = name
+        }
     }
 }

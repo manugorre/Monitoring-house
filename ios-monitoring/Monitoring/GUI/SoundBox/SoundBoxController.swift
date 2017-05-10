@@ -15,6 +15,7 @@ class SoundBoxController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noSpeakerSelectedLabel: UILabel!
     @IBOutlet weak var noSpeakerAvailableLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var sonosList = [Sonos]()
     var soundList = [[Sound]()]
@@ -39,7 +40,7 @@ class SoundBoxController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.applicationBlueDarkColor()
-        
+
         checkTraitCollection()
         getSonosWS()
         getSoundBoxWS()
@@ -79,9 +80,12 @@ class SoundBoxController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: WebServices
     
     func getSonosWS() {
-        SonosWS.getSonos(successClosure: { (sonos: [Sonos]) in
-            self.sonosList = sonos
+        activityIndicator.startAnimating()
+        
+        SonosWS.getSonos { (sonos: [Sonos]?) in
+            self.sonosList = sonos!
             
+            self.activityIndicator.stopAnimating()
             self.collectionView.reloadData()
             
             if self.sonosList.count < 1 {
@@ -89,20 +93,15 @@ class SoundBoxController: UIViewController, UICollectionViewDelegate, UICollecti
             } else {
                 self.noSpeakerAvailable(noSpeaker: false)
             }
-            
-        }) { (error: NSError?) in
-            print(error!)
         }
     }
     
     func getSoundBoxWS() {
-        SoundBoxWS.getSoundBox(successClosure: { (soundList: [[Sound]], authorList: [Author]) in
+        SoundBoxWS.getSoundBox(completion: { (soundList: [[Sound]], authorList: [Author]) in
             self.soundList = soundList
             self.authorList = authorList
             self.tableView.reloadData()
-        }) { (error: NSError?) in
-            
-        }
+        })
     }
     
     func listenSoundWS(authorIndex: Int, soundIndex: Int) {
@@ -110,11 +109,9 @@ class SoundBoxController: UIViewController, UICollectionViewDelegate, UICollecti
         let soundId = soundList[authorIndex][soundIndex].id
 
         if soundId != 0 && speakersId != "" {
-            SoundBoxWS.listenSound(speakerId: speakersId, soundId: soundId, successClosure: { (Void) in
+            SoundBoxWS.listenSound(speakerId: speakersId, soundId: soundId, completion: { (Void) in
                 
-            }) { (error: NSError?) in
-                print(error)
-            }
+            })
         }
     }
     
@@ -167,7 +164,7 @@ class SoundBoxController: UIViewController, UICollectionViewDelegate, UICollecti
         let viewController = storyboard?.instantiateViewController(withIdentifier: String(describing: SoundDetailsPeekViewController.self)) as! SoundDetailsPeekViewController
         if let indexPath = tableView.indexPathForRow(at: location) {
             initPeekedViewController(soundDetailsPeekedViewController: viewController, withItemAtIndexPath: indexPath)
-            print(context.sourceRect)
+
             if let cell = tableView.cellForRow(at: indexPath) {
                 context.sourceRect = cell.frame
             }

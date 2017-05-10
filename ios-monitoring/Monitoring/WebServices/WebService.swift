@@ -1,3 +1,4 @@
+
 //
 //  WebService.swift
 //  Monitoring
@@ -34,17 +35,5 @@ class Webservice: NSObject {
         
         return headers
     }
-    
-//    class func errorJSONFromResponse(response: Response<AnyObject, NSError>?) -> [String: AnyObject]? {
-//        if let errorData = response?.data {
-//            do {
-//                if let errorJSON = try JSONSerialization.JSONObjectWithData(errorData, options: NSJSONReadingOptions.AllowFragments) as? [String: AnyObject] {
-//                    return errorJSON
-//                }
-//            } catch _ {}
-//        }
-//        
-//        return nil
-//    }
     
 }

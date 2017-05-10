@@ -7,7 +7,7 @@ from .models import Sonos
 from .serializers import SonosSerializer
 from soundBox.models import Sound
 from soco import SoCo
-#from django.apps.config import AppConfig
+from .utils import get_ip_address
 
 
 class SonosList(APIView):
@@ -40,11 +40,16 @@ class SonosListen(APIView):
             raise NotFound(detail=_("No sound with this id"))
 
         sonos = SoCo(speaker[0].ip_address)
-        uri = 'http://192.168.0.22:8000/static/data/' + sound[0].author.name_text + '/sounds/' + sound[0].file_name_text
+        uri = 'http://' + get_ip_address() + ':8000/static/data/' + sound[0].author.name_text + '/sounds/' + sound[0].file_name_text
         sonos.play_uri(uri, start=True)
 
         sound[0].play_count_integer += 1
         sound[0].save()
 
+        data = {
+            "meta": {
+                "code": status.HTTP_200_OK
+            }
+        }
 
-        return Response(status=status.HTTP_200_OK)
+        return Response(data, status=status.HTTP_200_OK)
