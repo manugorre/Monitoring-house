@@ -26,6 +26,8 @@
 		32EF1AA51EB75F3200BCE917 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EF1AA41EB75F3200BCE917 /* Author.swift */; };
 		32EF1AA71EB761F600BCE917 /* SoundBoxWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EF1AA61EB761F600BCE917 /* SoundBoxWS.swift */; };
 		483BBB5694C98E9B7770E21E /* Pods_Monitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B7A05EBE2936BCB381FACA /* Pods_Monitoring.framework */; };
+		CAA9958B1EC5D25E0051CA61 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA9958A1EC5D25E0051CA61 /* MainNavigationController.swift */; };
+		CAA9958D1EC5D84D0051CA61 /* NoSonosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA9958C1EC5D84D0051CA61 /* NoSonosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		32EF1AA61EB761F600BCE917 /* SoundBoxWS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundBoxWS.swift; sourceTree = "<group>"; };
 		78B7A05EBE2936BCB381FACA /* Pods_Monitoring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monitoring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F075ADCD876268F89010D4 /* Pods-Monitoring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monitoring.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monitoring/Pods-Monitoring.release.xcconfig"; sourceTree = "<group>"; };
+		CAA9958A1EC5D25E0051CA61 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		CAA9958C1EC5D84D0051CA61 /* NoSonosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSonosViewController.swift; sourceTree = "<group>"; };
 		EA3DAEC9283C6C2E9C944B1E /* Pods-Monitoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monitoring.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monitoring/Pods-Monitoring.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				3200FFF91EB6B8100047459F /* Sound Box */,
+				CAA9958A1EC5D25E0051CA61 /* MainNavigationController.swift */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				320000011EB6BBB60047459F /* SonosCollectionViewCell.swift */,
 				320000031EB6BBF80047459F /* SoundTableViewCell.swift */,
 				32D1ECCB1EB92F0800BAE631 /* SoundDetailsPeekViewController.swift */,
+				CAA9958C1EC5D84D0051CA61 /* NoSonosViewController.swift */,
 			);
 			name = "Sound Box";
 			sourceTree = "<group>";
@@ -174,12 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3200FFF51EB66CC70047459F /* Build configuration list for PBXNativeTarget "Monitoring" */;
 			buildPhases = (
-				076BC44504F1E1718001C2E5 /* 📦 Check Pods Manifest.lock */,
+				076BC44504F1E1718001C2E5 /* [CP] Check Pods Manifest.lock */,
 				3200FFDF1EB66CC70047459F /* Sources */,
 				3200FFE01EB66CC70047459F /* Frameworks */,
 				3200FFE11EB66CC70047459F /* Resources */,
-				D7378B4474D823EC97EF5F0B /* 📦 Embed Pods Frameworks */,
-				4F1E03AD6C05D42FE10FDDFD /* 📦 Copy Pods Resources */,
+				D7378B4474D823EC97EF5F0B /* [CP] Embed Pods Frameworks */,
+				4F1E03AD6C05D42FE10FDDFD /* [CP] Copy Pods Resources */,
 				325411CA1EB935DF00F6A770 /* ShellScript */,
 			);
 			buildRules = (
@@ -240,19 +246,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		076BC44504F1E1718001C2E5 /* 📦 Check Pods Manifest.lock */ = {
+		076BC44504F1E1718001C2E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		325411CA1EB935DF00F6A770 /* ShellScript */ = {
@@ -268,14 +274,14 @@
 			shellPath = /bin/sh;
 			shellScript = "if which taylor >/dev/null; then\n    taylor -p ${PROJECT_DIR}/Monitoring -r xcode\nelse\n    echo \"Taylor not installed\"\nfi";
 		};
-		4F1E03AD6C05D42FE10FDDFD /* 📦 Copy Pods Resources */ = {
+		4F1E03AD6C05D42FE10FDDFD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,14 +289,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monitoring/Pods-Monitoring-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D7378B4474D823EC97EF5F0B /* 📦 Embed Pods Frameworks */ = {
+		D7378B4474D823EC97EF5F0B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA9958D1EC5D84D0051CA61 /* NoSonosViewController.swift in Sources */,
 				3200FFFB1EB6B85D0047459F /* SoundBoxController.swift in Sources */,
 				320000041EB6BBF80047459F /* SoundTableViewCell.swift in Sources */,
 				32D363631EB6DCBE00FF33F7 /* SonosWS.swift in Sources */,
@@ -315,6 +322,7 @@
 				3200FFE91EB66CC70047459F /* ViewController.swift in Sources */,
 				3200FFE71EB66CC70047459F /* AppDelegate.swift in Sources */,
 				320000021EB6BBB60047459F /* SonosCollectionViewCell.swift in Sources */,
+				CAA9958B1EC5D25E0051CA61 /* MainNavigationController.swift in Sources */,
 				32C8129D1EB94DA6004624E9 /* UIApplicationExtension.swift in Sources */,
 				32C8129E1EB94DA6004624E9 /* UIColorExtenxion.swift in Sources */,
 				3200FFFE1EB6BA7D0047459F /* Sound.swift in Sources */,

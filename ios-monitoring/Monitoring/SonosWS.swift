@@ -15,9 +15,9 @@ class SonosWS: Webservice {
 
     class func getSonos(completion: @escaping ([Sonos]?) -> Void) {
         let URLString = URLStringForPath(path: String(format: sonosPath))
-        print("coucou")
+
         Alamofire.request(URLString).validate().responseJSON { (response) -> Void in
-            print("par ici")
+
             guard response.result.isSuccess else {
                 print("Error while fetching remote sonos")
                 completion([Sonos]())
@@ -25,7 +25,6 @@ class SonosWS: Webservice {
             }
             
             guard let rows = response.result.value as? [[String: AnyObject]] else {
-                    print("Malformed data received from getSonos service")
                     completion([Sonos]())
                     return
             }

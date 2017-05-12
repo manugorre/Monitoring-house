@@ -28,7 +28,6 @@ class SoundBoxWS: Webservice {
             }
             
             guard let soundboxJSON = response.result.value as? [String: AnyObject] else {
-                print("Malformed data received from getSoundBox service")
                 completion([[Sound]()], [Author]())
                 return
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7S-94-sqy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="65Q-Ym-6dx">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -408,10 +408,52 @@
             </objects>
             <point key="canvasLocation" x="2957.971014492754" y="-55.434782608695656"/>
         </scene>
+        <!--No Sonos View Controller-->
+        <scene sceneID="woT-oU-CNa">
+            <objects>
+                <viewController id="65Q-Ym-6dx" customClass="NoSonosViewController" customModule="Monitoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wyo-q8-PF1"/>
+                        <viewControllerLayoutGuide type="bottom" id="oSR-Rp-sSW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QMN-ce-xCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Tf-RN-zHz">
+                                <rect key="frame" x="-0.33333333333334281" y="0.0" width="414.66666666666663" height="736"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucun soundBox serveur trouvé dans les parages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RR8-n9-d9A">
+                                <rect key="frame" x="15" y="358" width="384" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.080138888888888871" green="0.080138888888888871" blue="0.080138888888888871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RR8-n9-d9A" firstAttribute="centerY" secondItem="9Tf-RN-zHz" secondAttribute="centerY" id="4UZ-y7-QGF"/>
+                            <constraint firstItem="9Tf-RN-zHz" firstAttribute="height" secondItem="QMN-ce-xCZ" secondAttribute="height" id="4XK-QS-t2v"/>
+                            <constraint firstItem="9Tf-RN-zHz" firstAttribute="centerX" secondItem="QMN-ce-xCZ" secondAttribute="centerX" id="5tR-Bw-Dhu"/>
+                            <constraint firstAttribute="trailing" secondItem="RR8-n9-d9A" secondAttribute="trailing" constant="15" id="G9o-mj-FBH"/>
+                            <constraint firstItem="RR8-n9-d9A" firstAttribute="centerX" secondItem="9Tf-RN-zHz" secondAttribute="centerX" id="OCR-eU-JVU"/>
+                            <constraint firstItem="9Tf-RN-zHz" firstAttribute="width" secondItem="QMN-ce-xCZ" secondAttribute="width" id="ZIk-zq-e3K"/>
+                            <constraint firstItem="9Tf-RN-zHz" firstAttribute="centerY" secondItem="QMN-ce-xCZ" secondAttribute="centerY" id="va5-0X-R35"/>
+                            <constraint firstItem="RR8-n9-d9A" firstAttribute="leading" secondItem="QMN-ce-xCZ" secondAttribute="leading" constant="15" id="vka-sP-xLF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gifImageView" destination="9Tf-RN-zHz" id="iX5-0V-AAj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykt-XQ-0mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405.7971014492755" y="-737.77173913043487"/>
+        </scene>
         <!--SoundBox-->
         <scene sceneID="rhe-X3-Zx5">
             <objects>
-                <navigationController id="1Fw-fe-CjX" sceneMemberID="viewController">
+                <navigationController id="1Fw-fe-CjX" customClass="MainNavigationController" customModule="Monitoring" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SoundBox" id="EOY-XD-kvm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="69q-ev-0Pg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -425,10 +467,10 @@
             </objects>
             <point key="canvasLocation" x="1406" y="-54"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="E3I-Sc-VLA">
             <objects>
-                <tabBarController id="u7S-94-sqy" sceneMemberID="viewController">
+                <tabBarController id="u7S-94-sqy" customClass="MainTabBarController" customModule="Monitoring" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="AR0-Zy-hn1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
